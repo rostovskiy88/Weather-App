@@ -93,7 +93,7 @@ const app = {
             <h5 class="card-title p-2">${dt.toDateString()}</h5>            
             <div class="card-body">
             <p><img
-              src="http://openweathermap.org/img/wn/${
+              src="https://openweathermap.org/img/wn/${
                 day.weather[0].icon
               }@4x.png"             
               alt="${day.weather[0].description}"

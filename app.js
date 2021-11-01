@@ -16,7 +16,7 @@ const app = {
     let lon = document.getElementById('longitude').value;
     let lang = 'en';
     let units = 'metric';
-    const yourLoc = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=${app.key}`;
+    const yourLoc = `https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=${app.key}`;
     const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${app.key}&units=${units}&lang=${lang}`;
     fetch(url)
       .then((resp) => {
@@ -60,7 +60,8 @@ const app = {
     document.getElementById('latitude').value = lat.toFixed(2);
     document.getElementById('longitude').value = lon.toFixed(2);
 
-    const yourLoc = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=${app.key}`;
+    const proxy = 'https://cors-anywhere.herokuapp.com/';
+    const yourLoc = `https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=${app.key}`;
     console.log(yourLoc);
     fetch(yourLoc)
       .then((resp) => {
